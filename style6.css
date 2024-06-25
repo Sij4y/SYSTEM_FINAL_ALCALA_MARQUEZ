@@ -1,0 +1,91 @@
+body {
+            background-image: url('webpic/newbg22.png'); /* Set background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent repeating of the image */
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto; /* Center the container */
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for better readability */
+            margin-top: 20px; /* Add some space at the top */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Clip content inside the table */
+            margin: 20px auto; /* Clip content inside the table */
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-size: 16px; /* Increase font size */
+        }
+        .total {
+            font-weight: bold;
+            font-size: 18px; /* Larger font for total */
+        }
+        .remove-btn {
+            background-color: #ff523b;
+            color: white;
+            border: none;
+            padding: 10px 20px; /* Larger padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Larger font */
+            transition: background-color 0.3s ease;
+        }
+        .remove-btn:hover {
+            background-color: #e60000;
+        }
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px; /* Larger padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Larger font */
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto;
+        }
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+        .product-img {
+            width: 300px; /* Adjust size as needed */
+            height: auto;
+            margin-right: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 28px; /* Larger heading font */
+            color: #333;
+        }
+        .preloader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            transition: transform 1s ease, opacity 1s ease;
+        }
+        .preloader.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        /* style6.css */
+
+.paid {
+    color: green;
+    font-weight: bold; /* Optional: Make the text bold */
+}

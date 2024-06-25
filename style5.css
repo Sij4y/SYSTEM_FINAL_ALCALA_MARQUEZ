@@ -1,0 +1,70 @@
+body {
+    background-image: url('webpic/newbg13.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: rgb(14, 13, 13);
+}
+.container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(239, 243, 3, 0.1);
+    display: flex;
+}
+.sidebar {
+    width: 45%;
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-radius: 50px;
+    margin-right: 50px;
+}
+.sidebar img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.sidebar p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+.form-container {
+    width: 75%;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group button {
+    padding: 10px 30px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #218838;
+}
+
+.product-img {
+    max-width: 1000px; /* Increase the max-width as needed */
+    width: 300%; /* Increase the width percentage as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}

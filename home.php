@@ -1,0 +1,230 @@
+<?php
+session_start();
+include "profile_details.php";
+
+// Check if the user is not logged in, then redirect to login page
+if (!isset($_SESSION['username'])) {
+    header('Location: loginform.php');
+    exit;
+}
+?>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>CET ONLINE STORE website</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            body {
+                background-image: url('webpic/newbg22.png'); /* Set background image */
+                background-size: cover; /* Cover the entire viewport */
+                background-repeat: no-repeat; /* Prevent repeating of the image */
+            }
+            .preloader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 9999;
+      transition: transform 1s ease, opacity 1s ease;
+    }
+    .preloader.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+        </style>
+
+</head>
+<body class="hold-transition login-page">
+  <!-- Preloader -->
+  <div class="preloader">
+      <img class="animation__shake" src="webpic/ramon.png" alt="AdminLTELogo" height="400" width="400">
+  </div>
+
+<body>
+    <div class ="header"> <!-- Header section begins -->
+    <div class="container"> <!-- Container for header content -->
+        <div class="navbar"> <!-- Navigation bar -->
+            <div class="logo"> <!-- Logo -->
+                <a href="home.php"><img src="webpic/ramon.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems"> <!-- List of navigation items -->
+                    <li><a href="home.php">Home</a></li>
+                     <li><a href="products.html">Products</a></li>
+                     <li><a href="edit_profile.php">Account</a></li>
+                     
+
+                </ul>
+            </nav>
+            <a href="cart.php"><img src="webpic/cart.png" class="cart-img" width="30px" height="30px"></a> <!-- Cart icon -->
+            <img src="webpic/menu.png" class="menu-icon" onClick="menutoggle()" > <!-- Menu icon -->
+        </div>
+        <div class="row"> <!-- Header content row -->
+            <div class="col-2">
+                <h1>The best for <br> less.</h1> <!-- Heading -->
+                <p>The best things in life are <br> purchased.</p> <!-- Subheading -->
+                <a href="products.html" class="btn">Explore Now &#8594;</a> <!-- Button to explore products -->
+            </div>
+            <div class="col-2">
+                <img src="webpic/logo1.png"> <!-- Logo image -->
+            </div>
+        </div>
+    </div>
+</div> 
+        
+       
+        <!------------------------------ featured Products------------------------------>
+        <div class="small-container">
+            <h2 class="title" >Featured Products</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <a href="s1.php"><img src="webpic/s1.png"></a>
+                        <a href="s1.php"><h4>CET TSHIRT  MEN </h4></a>
+                        <div class="rating">
+                            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                      
+                    </div>
+                    <div class="col-4">
+                        <a href="s4.php"><img src="webpic/s4.png"></a>
+                        <a href="s4.php"><h4>CET JERSEY </h4></a>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                        </div>
+               
+                    </div>
+                    <div class="col-4">
+                        <a href="c1.php"><img src="webpic/itcard1.png"></a>
+                        <a href="c1.php"><h4>BSIT ID CARD </h4></a>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                        </div>
+                  
+                    </div>
+                     
+                </div>
+                <!--script for the slider of featured products hehe -->
+                <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("col-4");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }  
+
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change slide every 2 seconds
+        }
+
+        window.onload = function() {
+            showSlides();
+            const preloader = document.querySelector('.preloader');
+
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 300); // Hold the preloader for 0.5 seconds (500 milliseconds)
+        };
+    </script>
+                
+                
+            
+            
+            
+        
+        <!--------------------------`   offer   --------------------------------->
+        <div class="offer"> <!-- Offer section begins -->
+            <div class="small-container"> <!-- Container for offer content -->
+                <div class="row"> <!-- Row for offer content -->
+                    <div class="col-2"> <!-- Column for offer image -->
+                        <img src="webpic/s4.png" class="cart-img"> <!-- Offer image -->
+                    </div>
+                    <div class="col-2"> <!-- Column for offer details -->
+                        <p>Exclusively Available on CET STORE </p> <!-- Offer information -->
+                        <h1>New CET Shirt</h1> <!-- Offer title -->
+                        <small> Bringing that Jersey pride wherever you go. </small><br> <!-- Offer description -->
+                        <a href="s4.php" class="btn">Buy Now &#8594;</a> <!-- Button to buy -->
+                    </div>
+                </div> <!-- End of row for offer content -->
+            </div> <!-- End of container for offer content -->
+        </div> <!-- Offer section ends -->
+        <!----------------------------------footer------------------------------------->
+        <div class ="footer">
+        <div class="container">
+            
+            <div class="row">
+                
+                </div>
+                <div class="footer-col-2">
+                    <img src="webpic/logo3.png">
+                    <p>The purpose of life is to contribute in some way to making things better. </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="https://rmmc.instructure.com/login/canvas" target="_blank">RMMC CANVAS   <span>&#8594;</span></a></li>
+                        <li><a href="http://system.rmmc.edu.ph/rmmcweb/" target="_blank">RMMC LMS   <span>&#8594;</span></a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                   <ul>
+                    <li><a href="https://web.facebook.com/ricoalcala55" target="_blank">Facebook  <span>&#8594;</span></a></li>
+                     
+                    <li><a href="https://www.instagram.com/rics.alcla/" target="_blank">Instagram<span>&#8594;</span></a></li>
+                    
+                    </ul>
+                </div>
+                
+     
+    </div>
+        
+        
+        <!-----------------------------------js for toggle menu----------------------------------------------->
+        <script>
+            var menuItems=document.getElementById("MenuItems"); // Getting the element with ID "MenuItems"
+            
+            MenuItems.style.maxHeight="0px"; // Setting the maximum height of MenuItems to 0px initially
+            function menutoggle(){ // Function to toggle menu visibility
+                if(MenuItems.style.maxHeight == "0px"){ // If menu is closed
+                    MenuItems.style.maxHeight="200px"; // Open the menu by setting max height to 200px
+                }
+                else{ // If menu is open
+                    MenuItems.style.maxHeight="0px"; // Close the menu by setting max height back to 0px
+                }
+            }
+</script>
+
+    </body>
+</html>
